@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zprávy</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Arial', sans-serif;
+        line-height: 1.6;
+        color: #333;
+    }
+    
+    .news-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 20px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+    
+    .news-header {
+        text-align: center;
+        margin-bottom: 50px;
+    }
+    
+    .news-header h2 {
+        font-size: 3rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    .news-header p {
+        font-size: 1.2rem;
+        color: #7f8c8d;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+    
+    .news-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+    
+    .news-card {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+    }
+    
+    .news-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    }
+    
+    .news-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+    
+    .news-card:hover img {
+        transform: scale(1.05);
+    }
+    
+    .news-content {
+        padding: 25px;
+    }
+    
+    .news-date {
+        color: #e74c3c;
+        font-size: 0.9rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .news-title {
+        font-size: 1.4rem;
+        color: #2c3e50;
+        margin-bottom: 15px;
+        line-height: 1.4;
+    }
+    
+    .news-excerpt {
+        color: #7f8c8d;
+        margin-bottom: 20px;
+        line-height: 1.6;
+    }
+    
+    .read-more {
+        display: inline-block;
+        color: #3498db;
+        text-decoration: none;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+    
+    .read-more:hover {
+        color: #2980b9;
+    }
+    
+    .featured-video {
+        margin-top: 50px;
+        text-align: center;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    .featured-video h3 {
+        font-size: 2rem;
+        color: #2c3e50;
+        margin-bottom: 20px;
+    }
+    
+    .video-container {
+        position: relative;
+        width: 100%;
+        max-width: 800px;
+        margin: 0 auto;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+    
+    .video-container video {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+    
+    .breaking-news {
+        background: linear-gradient(45deg, #e74c3c, #c0392b);
+        color: white;
+        padding: 20px;
+        margin-bottom: 30px;
+        border-radius: 10px;
+        text-align: center;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.02); }
+        100% { transform: scale(1); }
+    }
+    
+    .breaking-news h3 {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+    }
+    
+    @media (max-width: 768px) {
+        .news-header h2 {
+            font-size: 2.5rem;
+        }
+        
+        .news-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        .news-section {
+            padding: 20px 10px;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <!-- SEKCE ZPRÁV - PŘIDEJTE TENTO KÓD DO VAŠEHO INDEX.HTML -->
+    <section class="news-section" id="zpravy">
+        <div class="news-header">
+            <h2>📰 Aktuální Zprávy</h2>
+            <p>Sledujte nejnovější události a důležité informace z našeho regionu i ze světa</p>
+        </div>
+
+```
+    <!-- Důležité zprávy -->
+    <div class="breaking-news">
+        <h3>🚨 DŮLEŽITÁ ZPRÁVA</h3>
+        <p>Zde můžete umístit nejdůležitější aktuální zprávu, která si zaslouží zvláštní pozornost</p>
+    </div>
+    
+    <!-- Grid zpráv -->
+    <div class="news-grid">
+        <!-- Zpráva 1 -->
+        <article class="news-card">
+            <img src="https://via.placeholder.com/400x200/3498db/ffffff?text=Zpráva+1" alt="Obrázek zprávy 1">
+            <div class="news-content">
+                <div class="news-date">10. června 2025</div>
+                <h3 class="news-title">Nadpis vaší první zprávy</h3>
+                <p class="news-excerpt">
+                    Zde napište krátký úryvek z vaší zprávy, který zaujme čtenáře a přiměje ho k přečtení celého článku...
+                </p>
+                <a href="#" class="read-more">Číst více →</a>
+            </div>
+        </article>
+        
+        <!-- Zpráva 2 -->
+        <article class="news-card">
+            <img src="https://via.placeholder.com/400x200/e74c3c/ffffff?text=Zpráva+2" alt="Obrázek zprávy 2">
+            <div class="news-content">
+                <div class="news-date">9. června 2025</div>
+                <h3 class="news-title">Nadpis vaší druhé zprávy</h3>
+                <p class="news-excerpt">
+                    Další zajímavá zpráva s poutavým popisem, který čtenáře informuje o obsahu článku...
+                </p>
+                <a href="#" class="read-more">Číst více →</a>
+            </div>
+        </article>
+        
+        <!-- Zpráva 3 -->
+        <article class="news-card">
+            <img src="https://via.placeholder.com/400x200/2ecc71/ffffff?text=Zpráva+3" alt="Obrázek zprávy 3">
+            <div class="news-content">
+                <div class="news-date">8. června 2025</div>
+                <h3 class="news-title">Nadpis vaší třetí zprávy</h3>
+                <p class="news-excerpt">
+                    Třetí zpráva s důležitými informacemi pro vaše čtenáře a návštěvníky webu...
+                </p>
+                <a href="#" class="read-more">Číst více →</a>
+            </div>
+        </article>
+        
+        <!-- Zpráva 4 -->
+        <article class="news-card">
+            <img src="https://via.placeholder.com/400x200/f39c12/ffffff?text=Zpráva+4" alt="Obrázek zprávy 4">
+            <div class="news-content">
+                <div class="news-date">7. června 2025</div>
+                <h3 class="news-title">Nadpis vaší čtvrté zprávy</h3>
+                <p class="news-excerpt">
+                    Čtvrtá zajímavá zpráva, která poskytuje cenné informace vašim návštěvníkům...
+                </p>
+                <a href="#" class="read-more">Číst více →</a>
+            </div>
+        </article>
+    </div>
+    
+    <!-- Sekce s videem -->
+    <div class="featured-video">
+        <h3>📹 Video zprávy</h3>
+        <div class="video-container">
+            <!-- Nahraďte src vaším vlastním video souborem -->
+            <video controls poster="https://via.placeholder.com/800x450/9b59b6/ffffff?text=Video+Preview">
+                <source src="vase-video.mp4" type="video/mp4">
+                <source src="vase-video.webm" type="video/webm">
+                Váš prohlížeč nepodporuje video element.
+            </video>
+        </div>
+        <p style="margin-top: 15px; color: #7f8c8d;">
+            Sledujte naše nejnovější video zprávy a reportáže
+        </p>
+    </div>
+</section>
+<!-- KONEC SEKCE ZPRÁV -->
+```
+
+</body>
+</html>
